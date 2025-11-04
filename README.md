@@ -36,6 +36,14 @@ pip install -r requirements.txt
 python scraping.py
 
 2. Ativar API
-uvicorn app:app --reload 
+uvicorn app:app --reload
 
+### Exemplos de chamadas com requests/responses
+1. /api/v1/books - Retorna o DataFrame completo como uma lista de objetos JSON.
+2. /api/v1/books/search -  Filtra livros por parte do título e/ou pelo nome exato do gênero.
+3. /api/v1/books/{livro_id} -  Busca e retorna os detalhes de um livro específico usando seu ID.
+4. /api/v1/categories -  xtrai e retorna uma lista de todos os valores únicos presentes na coluna 'tipo'.
+5. /api/v1/health - Verifica se a API está online e se os dados do CSV foram carregados corretamente.
 
+    Retorna:
+    - Status 200 (OK) se a API estiver rodando e os dados estiverem carregados.
