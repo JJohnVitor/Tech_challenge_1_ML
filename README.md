@@ -1,3 +1,9 @@
+### Descrição do projeto
+Este script é uma aplicação de Web Scraping de catálogo paginado, desenvolvida para extrair dados detalhados de livros e estruturá-los em CSV. A aplicação opera em um fluxo de dois níveis: primeiro, um Loop de Navegação utiliza a biblioteca requests para iterar pelas páginas do catálogo. Em cada página, o BeautifulSoup é empregado para coletar os links e títulos de todos os livros. Em seguida, um Loop de Detalhe realiza uma nova requisição para cada link, extraindo informações cruciais como preço, categoria, disponibilidade e rating. Os dados coletados são estruturados em um dicionário, recebem um id UUID e são armazenados. Finalmente, a função de Persistência utiliza a biblioteca Pandas para converter a lista completa em um DataFrame e salvá-lo como um arquivo CSV, garantindo a organização final dos dados.
+
+Após isso, API RESTful de alto desempenho, desenvolvida em FastAPI para servir dados de um catálogo de livros. A arquitetura centraliza-se em um mecanismo de cache em memória (db_livros), onde todos os dados são lidos do arquivo CSV (dados.csv) para um dicionário Python durante a inicialização (@app.on_event("startup")). O código utiliza Pydantic para validar a estrutura dos dados (Livro) e oferece endpoints otimizados. As funcionalidades incluem a listagem completa dos livros, a busca detalhada por ID, a filtragem avançada por título e categoria, e um endpoint de /health para verificar a disponibilidade do serviço e a integridade do carregamento dos dados. O uso do cache garante que as consultas sejam extremamente rápidas.
+
+### Instruções de instalação e configuração
 1. Criar o Ambiente Virtual (venv)
 Execute este comando no terminal (na raiz do projeto) para criar a pasta venv que isolará as dependências:
 
@@ -25,11 +31,11 @@ Com o ambiente virtual ativo (você verá (venv) no seu terminal), instale todas
 Bash
 pip install -r requirements.txt
 
-
-4. Executar scraping na página web
+### Instruções para execução
+1. Executar scraping na página web
 python scraping.py
 
-5. Ativar API
+2. Ativar API
 uvicorn app:app --reload 
 
 
