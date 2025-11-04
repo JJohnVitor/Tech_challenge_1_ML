@@ -38,7 +38,7 @@ python scraping.py
 2. Ativar API
 uvicorn app:app --reload
 
-### Exemplos de chamadas com requests/responses
+### Exemplos de chamadas e documentação
 1. /api/v1/books - Retorna o DataFrame completo como uma lista de objetos JSON.
 2. /api/v1/books/search -  Filtra livros por parte do título e/ou pelo nome exato do gênero.
 3. /api/v1/books/{livro_id} -  Busca e retorna os detalhes de um livro específico usando seu ID.
