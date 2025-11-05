@@ -47,3 +47,10 @@ uvicorn app:app --reload
 
     Retorna:
     - Status 200 (OK) se a API estiver rodando e os dados estiverem carregados.
+      
+### Plano arquitetural e pipeline de dados
+https://docs.google.com/document/d/1dvoAC49kY_4cYLWvQaX-vK8GwTPHK7os9fwkSpLYmLI/edit?tab=t.0
+
+### Link Deploy
+https://techchallengeml.vercel.app
+
